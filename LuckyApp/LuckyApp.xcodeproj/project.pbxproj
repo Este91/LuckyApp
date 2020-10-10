@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		336771CD49835EED0D8AC333 /* Pods_LuckyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2009555DEC1E917806459781 /* Pods_LuckyApp.framework */; };
 		8644CEA925326EE5007C4ADD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8644CEA825326EE5007C4ADD /* AppDelegate.swift */; };
 		8644CEAB25326EE5007C4ADD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8644CEAA25326EE5007C4ADD /* SceneDelegate.swift */; };
 		8644CEAD25326EE5007C4ADD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8644CEAC25326EE5007C4ADD /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2009555DEC1E917806459781 /* Pods_LuckyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LuckyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EB02D82E5E3B24600F65E3B /* Pods-LuckyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuckyApp.debug.xcconfig"; path = "Target Support Files/Pods-LuckyApp/Pods-LuckyApp.debug.xcconfig"; sourceTree = "<group>"; };
+		547BB5B2312D7086D7DD5C1C /* Pods-LuckyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuckyApp.release.xcconfig"; path = "Target Support Files/Pods-LuckyApp/Pods-LuckyApp.release.xcconfig"; sourceTree = "<group>"; };
 		8644CEA525326EE5007C4ADD /* LuckyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LuckyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8644CEA825326EE5007C4ADD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8644CEAA25326EE5007C4ADD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				336771CD49835EED0D8AC333 /* Pods_LuckyApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22ABA8389D0DD296A54767E6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2009555DEC1E917806459781 /* Pods_LuckyApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8644CE9C25326EE5007C4ADD = {
 			isa = PBXGroup;
 			children = (
 				8644CEA725326EE5007C4ADD /* LuckyApp */,
 				8644CEA625326EE5007C4ADD /* Products */,
+				F2168B9C2479BB76437BC748 /* Pods */,
+				22ABA8389D0DD296A54767E6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +82,16 @@
 			path = LuckyApp;
 			sourceTree = "<group>";
 		};
+		F2168B9C2479BB76437BC748 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4EB02D82E5E3B24600F65E3B /* Pods-LuckyApp.debug.xcconfig */,
+				547BB5B2312D7086D7DD5C1C /* Pods-LuckyApp.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +99,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8644CEB925326EE7007C4ADD /* Build configuration list for PBXNativeTarget "LuckyApp" */;
 			buildPhases = (
+				B9649EAC20079A7BFFC4E83F /* [CP] Check Pods Manifest.lock */,
 				8644CEA125326EE5007C4ADD /* Sources */,
 				8644CEA225326EE5007C4ADD /* Frameworks */,
 				8644CEA325326EE5007C4ADD /* Resources */,
@@ -132,6 +158,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B9649EAC20079A7BFFC4E83F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LuckyApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8644CEA125326EE5007C4ADD /* Sources */ = {
@@ -282,6 +333,7 @@
 		};
 		8644CEBA25326EE7007C4ADD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EB02D82E5E3B24600F65E3B /* Pods-LuckyApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -299,6 +351,7 @@
 		};
 		8644CEBB25326EE7007C4ADD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 547BB5B2312D7086D7DD5C1C /* Pods-LuckyApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
