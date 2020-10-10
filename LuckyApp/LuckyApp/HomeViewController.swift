@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
+final class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +17,7 @@ final class ViewController: UIViewController {
 }
 
 // MARK: UI
-private extension ViewController {
+private extension HomeViewController {
     func renderViews() {
         setupNavBar()
         setupTableView()
