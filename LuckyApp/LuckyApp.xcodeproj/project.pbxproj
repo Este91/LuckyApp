@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		336771CD49835EED0D8AC333 /* Pods_LuckyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2009555DEC1E917806459781 /* Pods_LuckyApp.framework */; };
+		86432AF2253278D40016F810 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86432AF1253278D40016F810 /* TestViewController.swift */; };
 		8644CEA925326EE5007C4ADD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8644CEA825326EE5007C4ADD /* AppDelegate.swift */; };
 		8644CEAB25326EE5007C4ADD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8644CEAA25326EE5007C4ADD /* SceneDelegate.swift */; };
 		8644CEAD25326EE5007C4ADD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8644CEAC25326EE5007C4ADD /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 		2009555DEC1E917806459781 /* Pods_LuckyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LuckyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EB02D82E5E3B24600F65E3B /* Pods-LuckyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuckyApp.debug.xcconfig"; path = "Target Support Files/Pods-LuckyApp/Pods-LuckyApp.debug.xcconfig"; sourceTree = "<group>"; };
 		547BB5B2312D7086D7DD5C1C /* Pods-LuckyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuckyApp.release.xcconfig"; path = "Target Support Files/Pods-LuckyApp/Pods-LuckyApp.release.xcconfig"; sourceTree = "<group>"; };
+		86432AF1253278D40016F810 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		8644CEA525326EE5007C4ADD /* LuckyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LuckyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8644CEA825326EE5007C4ADD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8644CEAA25326EE5007C4ADD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				8644CEB125326EE6007C4ADD /* Assets.xcassets */,
 				8644CEB325326EE6007C4ADD /* LaunchScreen.storyboard */,
 				8644CEB625326EE7007C4ADD /* Info.plist */,
+				86432AF1253278D40016F810 /* TestViewController.swift */,
 			);
 			path = LuckyApp;
 			sourceTree = "<group>";
@@ -88,7 +91,6 @@
 				4EB02D82E5E3B24600F65E3B /* Pods-LuckyApp.debug.xcconfig */,
 				547BB5B2312D7086D7DD5C1C /* Pods-LuckyApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -191,6 +193,7 @@
 			files = (
 				8644CEAD25326EE5007C4ADD /* ViewController.swift in Sources */,
 				8644CEA925326EE5007C4ADD /* AppDelegate.swift in Sources */,
+				86432AF2253278D40016F810 /* TestViewController.swift in Sources */,
 				8644CEAB25326EE5007C4ADD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
