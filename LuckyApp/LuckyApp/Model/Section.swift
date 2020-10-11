@@ -2,7 +2,7 @@
 //  Section.swift
 //  LuckyApp
 //
-//  Created by Camila Perez Tellado on 10/10/2020.
+//  Created by Esteban Boffa on 10/10/2020.
 //  Copyright © 2020 EstebanBoffa. All rights reserved.
 //
 
