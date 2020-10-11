@@ -11,7 +11,7 @@ import Foundation
 enum ApiRouter {
 
     case getOffers
-    case getOfferDetail(offerDetailNumber: String)
+    case getOfferDetail(_ offerDetailId: String)
 
     var scheme: String {
         return "https"

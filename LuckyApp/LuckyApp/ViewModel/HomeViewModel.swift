@@ -12,14 +12,14 @@ final class HomeViewModel: NSObject {
     
     private let offersService = OffersService()
     private let offerDetailService = OfferDetailService()
-    var offers: Offers?
-    var offerDetail: OfferDetail?
+    private var offers: Offers?
+    private var offerDetail: OfferDetail?
     weak var delegate: HomeViewModelDataProtocol?
 }
 
 // MARK: Services
 extension HomeViewModel {
-    func getOffers(completion: ((Result<Offers, Error>) -> ())? = nil) {
+    func getOffersData(completion: ((Result<Offers, Error>) -> ())? = nil) {
         offersService.getOffers() { [weak self] (result: Result<Offers, Error>) in
             guard let self = self else { return }
             switch result {
@@ -33,7 +33,7 @@ extension HomeViewModel {
         }
     }
     
-    func getOfferDetail(offerDetailId: String, completion: ((Result<OfferDetail, Error>) -> ())? = nil) {
+    func getOfferDetailData(offerDetailId: String, completion: ((Result<OfferDetail, Error>) -> ())? = nil) {
         offerDetailService.getOfferDetail(offerDetailId) { [weak self] (result: Result<OfferDetail, Error>) in
             guard let self = self else { return }
             switch result {
@@ -45,5 +45,12 @@ extension HomeViewModel {
             }
             completion?(result)
         }
+    }
+}
+
+// MARK: Getters
+extension HomeViewModel {
+    func getOffers() -> Offers? {
+        return offers
     }
 }
