@@ -10,26 +10,14 @@ import UIKit
 
 final class HomeViewController: UIViewController {
     
-    let offersService = OffersService()
-    var offers: Offers?
+    let homeViewModel = HomeViewModel()
     let tableView = UITableView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        homeViewModel.delegate = self
+        homeViewModel.getOffersData()
         renderViews()
-        offersService.getOffers() { [weak self] (result: Result<Offers, Error>) in
-            guard let self = self else { return }
-            switch result {
-            case .success(let offers):
-                self.offers = offers
-                DispatchQueue.main.async { [weak self] in
-                    guard let self = self else { return }
-                    self.tableView.reloadData()
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
     }
 }
 
@@ -42,7 +30,7 @@ private extension HomeViewController {
     
     func setupNavBar() {
         navigationController?.navigationBar.barTintColor = "#F7F9FA".hexaToUIColor()
-        title = "Lucky"
+        title = "Lucky Home"
     }
     
     func setupTableView() {
@@ -66,12 +54,12 @@ private extension HomeViewController {
 // MARK: UITableViewDelegate & UITableViewDataSource
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let numberOfRowsInSection = offers?.sections[section].items.count
+        let numberOfRowsInSection = homeViewModel.getOffers()?.sections[section].items.count
         return numberOfRowsInSection != nil ? numberOfRowsInSection! + 1 : 0
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return offers?.sections.count ?? 0
+        return homeViewModel.getOffers()?.sections.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -90,15 +78,22 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return UITableViewCell()
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row > 0 {
+            let detailUrl = homeViewModel.getOffers()?.sections[indexPath.section].items[indexPath.row - 1].detailUrl
+            homeViewModel.getOfferDetailData(offerDetailUrl: detailUrl ?? "")
+        }
+    }
 }
 
 extension HomeViewController {
     func dataForCellAt(indexPath: IndexPath) -> Item? {
-        return offers?.sections[indexPath.section].items[indexPath.row - 1]
+        return homeViewModel.getOffers()?.sections[indexPath.section].items[indexPath.row - 1]
     }
 
     func dataForSectionCellAt(indexPath: IndexPath) -> OffersSectionData {
-        let sectionTitle = offers?.sections[indexPath.section].title ?? ""
+        let sectionTitle = homeViewModel.getOffers()?.sections[indexPath.section].title ?? ""
         return OffersSectionData(sectionTitle: sectionTitle)
     }
 }
@@ -110,6 +105,22 @@ struct OffersData {
 
 struct OffersSectionData {
     let sectionTitle: String
+}
+
+// MARK: HomeViewModelDataProtocol
+extension HomeViewController: HomeViewModelDataProtocol {
+    func offersDataUpdated() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.tableView.reloadData()
+        }
+    }
+    
+    func offerDetailDataUpdated() {
+        DispatchQueue.main.async { [weak self] in
+            self?.navigationController?.pushViewController(TestViewController(), animated: true)
+        }
+    }
 }
 
 
