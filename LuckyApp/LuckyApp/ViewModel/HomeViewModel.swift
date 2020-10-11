@@ -20,7 +20,7 @@ final class HomeViewModel: NSObject {
 // MARK: Services
 extension HomeViewModel {
     func getOffers(completion: ((Result<Offers, Error>) -> ())? = nil) {
-        NetworkLayer.request(router: ApiRouter.getOffers) { [weak self] (result: Result<Offers, Error>) in
+        offersService.getOffers() { [weak self] (result: Result<Offers, Error>) in
             guard let self = self else { return }
             switch result {
             case .success(let offers):
@@ -33,8 +33,8 @@ extension HomeViewModel {
         }
     }
     
-    func getOfferDetail(completion: ((Result<OfferDetail, Error>) -> ())? = nil) {
-        NetworkLayer.request(router: ApiRouter.getOfferDetail(offerDetailNumber: "7")) { [weak self] (result: Result<OfferDetail, Error>) in
+    func getOfferDetail(offerDetailId: String, completion: ((Result<OfferDetail, Error>) -> ())? = nil) {
+        offerDetailService.getOfferDetail(offerDetailId) { [weak self] (result: Result<OfferDetail, Error>) in
             guard let self = self else { return }
             switch result {
             case .success(let offerDetail):

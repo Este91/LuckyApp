@@ -9,19 +9,8 @@
 import Foundation
 
 final class OffersService {
-    
-    var offers: Offers?
-    
     func getOffers(completion: ((Result<Offers, Error>) -> ())? = nil) {
-        NetworkLayer.request(router: ApiRouter.getOffers) { [weak self] (result: Result<Offers, Error>) in
-            guard let self = self else { return }
-            switch result {
-            case .success(let offers):
-                print("success")
-                self.offers = offers
-            case .failure(let error):
-                print(error)
-            }
+        NetworkLayer.request(router: ApiRouter.getOffers) { (result: Result<Offers, Error>) in
             completion?(result)
         }
     }
