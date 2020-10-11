@@ -11,6 +11,7 @@ import Foundation
 enum ApiRouter {
 
     case getOffers
+    case getOfferDetail(offerDetailNumber: String)
 
     var scheme: String {
         return "https"
@@ -18,7 +19,7 @@ enum ApiRouter {
 
     var host: String {
         switch self {
-        case .getOffers:
+        case .getOffers, .getOfferDetail:
             return "www.nasable.com"
         }
     }
@@ -27,6 +28,8 @@ enum ApiRouter {
         switch self {
         case .getOffers:
             return "/luckytest/api/offers"
+        case .getOfferDetail(let offerDetailNumber):
+            return "/luckytest/api/offers/\(offerDetailNumber)"
         }
     }
 }
