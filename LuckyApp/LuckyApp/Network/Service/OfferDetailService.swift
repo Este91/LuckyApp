@@ -9,8 +9,8 @@
 import Foundation
 
 final class OfferDetailService {
-    func getOfferDetail(_ offerDetailId: String, completion: ((Result<OfferDetail, Error>) -> ())? = nil) {
-        NetworkLayer.request(router: ApiRouter.getOfferDetail(offerDetailId)) { (result: Result<OfferDetail, Error>) in
+    func getOfferDetail(_ offerDetailUrl: String, completion: ((Result<OfferDetail, Error>) -> ())? = nil) {
+        NetworkLayer.request(router: ApiRouter.getOfferDetail(offerDetailUrl)) { (result: Result<OfferDetail, Error>) in
             completion?(result)
         }
     }

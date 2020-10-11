@@ -33,8 +33,8 @@ extension HomeViewModel {
         }
     }
     
-    func getOfferDetailData(offerDetailId: String, completion: ((Result<OfferDetail, Error>) -> ())? = nil) {
-        offerDetailService.getOfferDetail(offerDetailId) { [weak self] (result: Result<OfferDetail, Error>) in
+    func getOfferDetailData(offerDetailUrl: String, completion: ((Result<OfferDetail, Error>) -> ())? = nil) {
+        offerDetailService.getOfferDetail(offerDetailUrl) { [weak self] (result: Result<OfferDetail, Error>) in
             guard let self = self else { return }
             switch result {
             case .success(let offerDetail):

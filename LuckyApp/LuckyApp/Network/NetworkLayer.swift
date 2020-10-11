@@ -12,13 +12,19 @@ import UIKit
 struct NetworkLayer {
     static func request<T: Codable>(router: ApiRouter, completion: @escaping (Result<T, Error>) -> ()) {
         var components = URLComponents()
-        components.scheme = router.scheme
-        components.host = router.host
-        components.path = router.path
-
-        guard let url = components.url else { return }
-        var urlRequest = URLRequest(url: url)
-
+        
+        var finalUrl: URL?
+        if let completeUrl = router.completeUrl {
+            finalUrl = URL(string: completeUrl)
+        } else {
+            components.scheme = router.scheme
+            components.host = router.host
+            components.path = router.path
+            finalUrl = components.url
+        }
+    
+        guard let url = finalUrl else { return }
+        let urlRequest = URLRequest(url: url)
         let session = URLSession(configuration: .default)
 
         let dataTask = session.dataTask(with: urlRequest) { data, response, error in
