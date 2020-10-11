@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  LuckyApp
 //
-//  Created by Camila Perez Tellado on 10/10/2020.
+//  Created by Esteban Boffa on 10/10/2020.
 //  Copyright © 2020 EstebanBoffa. All rights reserved.
 //
 
@@ -11,10 +11,25 @@ import UIKit
 final class HomeViewController: UIViewController {
     
     let offersService = OffersService()
+    var offers: Offers?
+    let tableView = UITableView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         renderViews()
+        offersService.getOffers() { [weak self] (result: Result<Offers, Error>) in
+            guard let self = self else { return }
+            switch result {
+            case .success(let offers):
+                self.offers = offers
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
+                    self.tableView.reloadData()
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }
 
@@ -31,7 +46,6 @@ private extension HomeViewController {
     }
     
     func setupTableView() {
-        let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.backgroundColor = .white
         tableView.separatorStyle = .none
