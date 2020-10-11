@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 struct UI {
-    
     struct Margin {
         static let XXXS_MARGIN: CGFloat = 2
         static let XXS_MARGIN: CGFloat = 8
