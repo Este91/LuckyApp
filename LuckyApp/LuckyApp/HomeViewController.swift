@@ -9,6 +9,8 @@
 import UIKit
 
 final class HomeViewController: UIViewController {
+    
+    let offersService = OffersService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,16 +52,50 @@ private extension HomeViewController {
 // MARK: UITableViewDelegate & UITableViewDataSource
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        let numberOfRowsInSection = offers?.sections[section].items.count
+        return numberOfRowsInSection != nil ? numberOfRowsInSection! + 1 : 0
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
+        return offers?.sections.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 {
+            if let sectionCell = tableView.dequeueReusableCell(withIdentifier: OfferSectionTableViewCell.cellIdentifier, for: indexPath) as? OfferSectionTableViewCell {
+                    let data = dataForSectionCellAt(indexPath: indexPath)
+                    sectionCell.setupCell(data: data)
+                    return sectionCell
+                }
+        } else {
+            if let rowCell = tableView.dequeueReusableCell(withIdentifier: OfferTableViewCell.cellIdentifier, for: indexPath) as? OfferTableViewCell {
+                let data = dataForCellAt(indexPath: indexPath)
+                rowCell.setupCell(data: data)
+                return rowCell
+            }
+        }
         return UITableViewCell()
     }
+}
+
+extension HomeViewController {
+    func dataForCellAt(indexPath: IndexPath) -> Item? {
+        return offers?.sections[indexPath.section].items[indexPath.row - 1]
+    }
+
+    func dataForSectionCellAt(indexPath: IndexPath) -> OffersSectionData {
+        let sectionTitle = offers?.sections[indexPath.section].title ?? ""
+        return OffersSectionData(sectionTitle: sectionTitle)
+    }
+}
+
+struct OffersData {
+    let title: String
+    
+}
+
+struct OffersSectionData {
+    let sectionTitle: String
 }
 
 
