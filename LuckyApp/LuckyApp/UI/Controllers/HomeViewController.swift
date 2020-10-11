@@ -41,7 +41,7 @@ private extension HomeViewController {
     }
     
     func setupNavBar() {
-        navigationController?.navigationBar.barTintColor = .lightGray
+        navigationController?.navigationBar.barTintColor = "#F7F9FA".hexaToUIColor()
         title = "Lucky"
     }
     
