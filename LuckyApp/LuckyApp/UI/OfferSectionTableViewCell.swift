@@ -12,7 +12,7 @@ import UIKit
 final class OfferSectionTableViewCell: UITableViewCell {
 
     static let cellIdentifier = "OfferSectionTableViewCell"
-    private var label = UILabel()
+    private let label = UILabel()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -51,10 +51,10 @@ private extension OfferSectionTableViewCell {
         label.textColor = "#222D34".hexaToUIColor()
         contentView.addSubview(label)
         NSLayoutConstraint.activate([
-            label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
-            label.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24),
-            label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 22),
-            label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -14)
+            label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: UI.Margin.XXL_MARGIN),
+            label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: UI.Margin.L_MARGIN),
+            label.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -UI.Margin.L_MARGIN),
+            label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -UI.Margin.L_MARGIN)
         ])
     }
 
