@@ -150,14 +150,50 @@ private extension OfferDetailViewController {
             priceLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24)
         ])
         
-        let oldPriceLabel = buildLabel(text: detailViewModel.price.old.uppercased(), textColor: "#9DB0BD".hexaToUIColor(), font: UIFont.systemFont(ofSize: 14), numberOfLines: 1)
-        contentView.addSubview(oldPriceLabel)
+        let oldPriceView = UIView()
+        oldPriceView.prepareForAutolayout(.clear)
+        contentView.addSubview(oldPriceView)
         NSLayoutConstraint.activate([
-            oldPriceLabel.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 7),
-            oldPriceLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
-            oldPriceLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24)
+            oldPriceView.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 7),
+            oldPriceView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
+            oldPriceView.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: -24)
         ])
 
+        let oldPriceLabel = buildLabel(text: detailViewModel.price.old.uppercased(), textColor: "#9DB0BD".hexaToUIColor(), font: UIFont.systemFont(ofSize: 14), numberOfLines: 1)
+        oldPriceView.addSubview(oldPriceLabel)
+        NSLayoutConstraint.activate([
+            oldPriceLabel.topAnchor.constraint(equalTo: oldPriceView.topAnchor),
+            oldPriceLabel.leadingAnchor.constraint(equalTo: oldPriceView.leadingAnchor),
+            oldPriceLabel.trailingAnchor.constraint(equalTo: oldPriceView.trailingAnchor),
+            oldPriceLabel.bottomAnchor.constraint(equalTo: oldPriceView.bottomAnchor)
+        ])
+        
+        let lineView = UIView()
+        lineView.prepareForAutolayout("#9DB0BD".hexaToUIColor())
+        oldPriceView.addSubview(lineView)
+        NSLayoutConstraint.activate([
+            lineView.centerYAnchor.constraint(equalTo: oldPriceView.centerYAnchor),
+            lineView.leadingAnchor.constraint(equalTo: oldPriceView.leadingAnchor),
+            lineView.trailingAnchor.constraint(equalTo: oldPriceView.trailingAnchor),
+            lineView.heightAnchor.constraint(equalToConstant: 1)
+        ])
+        
+        let newPriceLabel = buildLabel(text: detailViewModel.price.new.uppercased(), textColor: "#222D34".hexaToUIColor(), font: UIFont.systemFont(ofSize: 18), numberOfLines: 1)
+        contentView.addSubview(newPriceLabel)
+        NSLayoutConstraint.activate([
+            newPriceLabel.centerYAnchor.constraint(equalTo: oldPriceView.centerYAnchor),
+            newPriceLabel.leftAnchor.constraint(equalTo: oldPriceView.rightAnchor, constant: 14),
+            newPriceLabel.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: -24)
+        ])
+        
+        let expirationLabel = buildLabel(text: detailViewModel.expiration, textColor: "#718897".hexaToUIColor(), font: UIFont.systemFont(ofSize: 10), numberOfLines: 1)
+        contentView.addSubview(expirationLabel)
+        NSLayoutConstraint.activate([
+            expirationLabel.centerYAnchor.constraint(equalTo: newPriceLabel.centerYAnchor),
+            expirationLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24),
+            expirationLabel.leftAnchor.constraint(greaterThanOrEqualTo: newPriceLabel.rightAnchor, constant: 14)
+        ])
+        
         let redemptionsCapLabel = buildLabel(text: "REDEMPTIONS CAP: " + detailViewModel.redemptionsCap.uppercased(), textColor: "#222D34".hexaToUIColor(), font: UIFont.systemFont(ofSize: 12), numberOfLines: 1)
         contentView.addSubview(redemptionsCapLabel)
         NSLayoutConstraint.activate([
