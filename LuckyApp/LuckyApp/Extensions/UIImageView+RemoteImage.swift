@@ -18,7 +18,6 @@ extension UIImageView {
                 UIView.transition(with: self, duration: 0.3, options: .transitionCrossDissolve, animations: { [weak self] in
                         guard let self = self else { return }
                         self.backgroundColor = .clear
-                        self.layer.cornerRadius = 0
                         self.image = image
                     }, completion: { _ in
                         success?(image)

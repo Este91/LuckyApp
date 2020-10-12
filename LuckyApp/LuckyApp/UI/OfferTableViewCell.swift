@@ -38,7 +38,6 @@ final class OfferTableViewCell: UITableViewCell {
 
 // MARK: Setup cell
 extension OfferTableViewCell {
-//    func setupCell(data: OffersData) {
     func setupCell(_ data: Item?) {
         offerImageView.setRemoteImage(imageUrl: data?.imageUrl ?? "")
         brandLabel.text = data?.brand.uppercased()
@@ -80,11 +79,7 @@ private extension OfferTableViewCell {
     }
 
     func setupBrandLabel() {
-        brandLabel.prepareForAutolayout(.clear)
-        brandLabel.textAlignment = .left
-        brandLabel.numberOfLines = 1
-        brandLabel.font = UIFont.systemFont(ofSize: 10) // corregir font
-        brandLabel.textColor = "#718897".hexaToUIColor()
+        setupLabel(label: brandLabel, textColor: "#718897".hexaToUIColor(), font: UIFont.systemFont(ofSize: 10), numberOfLines: 1)
         contentView.addSubview(brandLabel)
         NSLayoutConstraint.activate([
             brandLabel.topAnchor.constraint(equalTo: offerImageView.topAnchor),
@@ -93,11 +88,7 @@ private extension OfferTableViewCell {
     }
 
     func setupTitleLabel() {
-        titleLabel.prepareForAutolayout(.clear)
-        titleLabel.textAlignment = .left
-        titleLabel.numberOfLines = 0
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 16) // corregir font
-        titleLabel.textColor = "#222D34".hexaToUIColor()
+        setupLabel(label: titleLabel, textColor: "#222D34".hexaToUIColor(), font: UIFont.boldSystemFont(ofSize: 16))
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineHeightMultiple = 1.34
         titleLabel.attributedText = NSMutableAttributedString(string: "Offer", attributes: [NSAttributedString.Key.kern: 0.25, NSAttributedString.Key.paragraphStyle: paragraphStyle])
@@ -110,11 +101,7 @@ private extension OfferTableViewCell {
     }
 
     func setupTagsLabel() {
-        tagsLabel.prepareForAutolayout(.clear)
-        tagsLabel.textAlignment = .left
-        tagsLabel.numberOfLines = 1
-        tagsLabel.font = UIFont.systemFont(ofSize: 10) // corregir font
-        tagsLabel.textColor = "#718897".hexaToUIColor()
+        setupLabel(label: tagsLabel, textColor: "#718897".hexaToUIColor(), font: UIFont.systemFont(ofSize: 10), numberOfLines: 1)
         contentView.addSubview(tagsLabel)
         NSLayoutConstraint.activate([
             tagsLabel.leftAnchor.constraint(equalTo: offerImageView.rightAnchor, constant: UI.Margin.S_MARGIN),
@@ -147,22 +134,14 @@ private extension OfferTableViewCell {
             heartImageView.widthAnchor.constraint(equalToConstant: 10)
         ])
         
-        setupFavouritesLabel()
+        setupLabel(label: favouritesLabel, textColor: "#718897".hexaToUIColor(), font: UIFont.systemFont(ofSize: 10), numberOfLines: 1)
+        favoritesView.addSubview(favouritesLabel)
         NSLayoutConstraint.activate([
             favouritesLabel.topAnchor.constraint(equalTo: favoritesView.topAnchor),
             favouritesLabel.leftAnchor.constraint(equalTo: heartImageView.rightAnchor, constant: 5),
             favouritesLabel.trailingAnchor.constraint(equalTo: favoritesView.trailingAnchor),
             favouritesLabel.bottomAnchor.constraint(equalTo: favoritesView.bottomAnchor),
         ])
-    }
-
-    func setupFavouritesLabel() {
-        favouritesLabel.prepareForAutolayout(.clear)
-        favouritesLabel.textAlignment = .left
-        favouritesLabel.numberOfLines = 1
-        favouritesLabel.font = UIFont.systemFont(ofSize: 10)
-        favouritesLabel.textColor = "#718897".hexaToUIColor()
-        favoritesView.addSubview(favouritesLabel)
     }
 
     func getFavoriteString(_ favoriteCount: Int?) -> String {
@@ -177,6 +156,14 @@ private extension OfferTableViewCell {
             favoriteString = centenas == "0" ? favoriteString + " " + unidadDeMil : favoriteString + " " + unidadDeMil + "," + centenas
             return favoriteString + "K"
         }
+    }
+    
+    func setupLabel(label: UILabel, textColor: UIColor, font: UIFont, textAlignment: NSTextAlignment = .left, numberOfLines: Int = 0) {
+        label.prepareForAutolayout(.clear)
+        label.textAlignment = textAlignment
+        label.textColor = textColor
+        label.font = font
+        label.numberOfLines = numberOfLines
     }
 
     func clearImage() {
