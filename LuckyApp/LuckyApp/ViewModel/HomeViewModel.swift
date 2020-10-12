@@ -72,4 +72,8 @@ extension HomeViewModel {
     func getNumberOfSections() -> Int {
         offersViewModel?.sections.count ?? 0
     }
+    
+    func getDetailViewModel() -> DetailViewModel? {
+        return detailViewModel
+    }
 }

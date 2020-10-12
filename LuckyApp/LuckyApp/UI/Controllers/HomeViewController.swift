@@ -97,7 +97,11 @@ extension HomeViewController: HomeViewModelDataProtocol {
     
     func offerDetailDataUpdated() {
         DispatchQueue.main.async { [weak self] in
-            self?.navigationController?.pushViewController(OfferDetailViewController(), animated: true)
+            if let viewModel = self?.homeViewModel.getDetailViewModel() {
+                let offerDetailVC = OfferDetailViewController(detailViewModel: viewModel)
+                self?.navigationController?.pushViewController(offerDetailVC, animated: true)
+            }
+            
         }
     }
 }

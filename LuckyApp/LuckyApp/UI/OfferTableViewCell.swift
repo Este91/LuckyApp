@@ -43,7 +43,7 @@ extension OfferTableViewCell {
         brandLabel.text = data?.brand.uppercased()
         titleLabel.text = data?.title
         tagsLabel.text = data?.tags
-        favouritesLabel.text = getFavoriteString(data?.favoriteCount)
+        favouritesLabel.text = data?.favoriteCount.intToFavoriteString()
     }
 }
 
@@ -142,20 +142,6 @@ private extension OfferTableViewCell {
             favouritesLabel.trailingAnchor.constraint(equalTo: favoritesView.trailingAnchor),
             favouritesLabel.bottomAnchor.constraint(equalTo: favoritesView.bottomAnchor),
         ])
-    }
-
-    func getFavoriteString(_ favoriteCount: Int?) -> String {
-        guard let favoriteCount = favoriteCount else { return "" }
-        var favoriteString = ""
-        let unidadDeMil = String(favoriteCount / 1000)
-        let centenas = String((favoriteCount % 1000) / 100)
-
-        if unidadDeMil == "0" {
-            return favoriteString + String(favoriteCount)
-        } else {
-            favoriteString = centenas == "0" ? favoriteString + " " + unidadDeMil : favoriteString + " " + unidadDeMil + "," + centenas
-            return favoriteString + "K"
-        }
     }
     
     func setupLabel(label: UILabel, textColor: UIColor, font: UIFont, textAlignment: NSTextAlignment = .left, numberOfLines: Int = 0) {
