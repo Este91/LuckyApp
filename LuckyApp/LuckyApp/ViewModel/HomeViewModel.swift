@@ -13,7 +13,7 @@ final class HomeViewModel: NSObject {
     private let offersService = OffersService()
     private let offerDetailService = OfferDetailService()
     private var offersViewModel: OffersViewModel?
-    private var offerDetailViewModel: OfferDetailViewModel?
+    private var detailViewModel: DetailViewModel?
     weak var delegate: HomeViewModelDataProtocol?
 }
 
@@ -33,12 +33,12 @@ extension HomeViewModel {
         }
     }
     
-    func getOfferDetailData(_ offerDetailUrl: String, completion: ((Result<OfferDetail, Error>) -> ())? = nil) {
-        offerDetailService.getOfferDetail(offerDetailUrl) { [weak self] (result: Result<OfferDetail, Error>) in
+    func getOfferDetailData(_ offerDetailUrl: String, completion: ((Result<Detail, Error>) -> ())? = nil) {
+        offerDetailService.getOfferDetail(offerDetailUrl) { [weak self] (result: Result<Detail, Error>) in
             guard let self = self else { return }
             switch result {
             case .success(let offerDetail):
-                self.offerDetailViewModel = OfferDetailViewModel(offerDetail)
+                self.detailViewModel = DetailViewModel(offerDetail)
                 self.delegate?.offerDetailDataUpdated()
             case .failure(let error):
                 print(error)

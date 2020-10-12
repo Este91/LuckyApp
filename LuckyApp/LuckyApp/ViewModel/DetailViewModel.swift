@@ -1,5 +1,5 @@
 //
-//  OfferDetailViewModel.swift
+//  DetailViewModel.swift
 //  LuckyApp
 //
 //  Created by Esteban Boffa on 12/10/2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct OfferDetailViewModel {
+struct DetailViewModel {
     
     let id: Int
     let imageUrl: String
@@ -21,7 +21,7 @@ struct OfferDetailViewModel {
     let expiration: String
     let redemptionsCap: String
     
-    init(_ withModel: OfferDetail) {
+    init(_ withModel: Detail) {
         self.id = withModel.id
         self.imageUrl = withModel.imageUrl
         self.brand = withModel.brand

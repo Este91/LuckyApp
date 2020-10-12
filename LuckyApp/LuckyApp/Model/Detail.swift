@@ -1,5 +1,5 @@
 //
-//  OfferDetail.swift
+//  Detail.swift
 //  LuckyApp
 //
 //  Created by Esteban Boffa on 11/10/2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct OfferDetail: Codable {
+struct Detail: Codable {
     let id: Int
     let imageUrl: String
     let brand: String
