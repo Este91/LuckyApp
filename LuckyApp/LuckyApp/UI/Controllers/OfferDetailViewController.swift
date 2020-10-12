@@ -37,6 +37,7 @@ private extension OfferDetailViewController {
     }
     
     func setupNavBar() {
+        navigationController?.navigationBar.tintColor = "#222D34".hexaToUIColor()
         let favoriteItem = UIBarButtonItem(image: UIImage(named: "WhiteHeart"), style: .plain, target: self, action: #selector(favoriteItemPressed))
         favoriteItem.tintColor = "#222D34".hexaToUIColor()
             

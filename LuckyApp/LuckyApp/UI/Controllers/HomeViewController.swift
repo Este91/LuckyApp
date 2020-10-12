@@ -19,6 +19,16 @@ final class HomeViewController: UIViewController {
         homeViewModel.getOffersData()
         renderViews()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationItem.title = "Home"
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationItem.title = ""
+    }
 }
 
 // MARK: UI
@@ -30,7 +40,6 @@ private extension HomeViewController {
     
     func setupNavBar() {
         navigationController?.navigationBar.barTintColor = "#F7F9FA".hexaToUIColor()
-        title = "Home"
     }
     
     func setupTableView() {
