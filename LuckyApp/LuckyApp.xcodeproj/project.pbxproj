@@ -7,20 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		86432AF2253278D40016F810 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86432AF1253278D40016F810 /* TestViewController.swift */; };
+		4B5878F428874696BA47F200 /* Pods_LuckyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87BE28630CB1F9EFE99D745B /* Pods_LuckyApp.framework */; };
+		86432AF2253278D40016F810 /* OfferDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86432AF1253278D40016F810 /* OfferDetailViewController.swift */; };
 		8644CEA925326EE5007C4ADD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8644CEA825326EE5007C4ADD /* AppDelegate.swift */; };
 		8644CEAB25326EE5007C4ADD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8644CEAA25326EE5007C4ADD /* SceneDelegate.swift */; };
 		8644CEB025326EE5007C4ADD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8644CEAE25326EE5007C4ADD /* Main.storyboard */; };
 		8644CEB225326EE6007C4ADD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8644CEB125326EE6007C4ADD /* Assets.xcassets */; };
 		8644CEB525326EE6007C4ADD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8644CEB325326EE6007C4ADD /* LaunchScreen.storyboard */; };
+		8674BD8A2534442D00E92E6A /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8674BD892534442D00E92E6A /* SpinnerViewController.swift */; };
+		8674BD8C253496C900E92E6A /* OffersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8674BD8B253496C900E92E6A /* OffersViewModel.swift */; };
+		8674BD902534B45500E92E6A /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8674BD8F2534B45500E92E6A /* Detail.swift */; };
+		8674BD922534B4F400E92E6A /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8674BD912534B4F400E92E6A /* DetailViewModel.swift */; };
+		8674BD942534C18900E92E6A /* Int+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8674BD932534C18900E92E6A /* Int+String.swift */; };
 		86955700253280ED00EB5DA0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869556FF253280ED00EB5DA0 /* HomeViewController.swift */; };
-		90118908605EB117CB142765 /* Pods_LuckyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E93B16DFA17B472D4BF10DC /* Pods_LuckyApp.framework */; };
+		86955702253282D100EB5DA0 /* OfferSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86955701253282D100EB5DA0 /* OfferSectionTableViewCell.swift */; };
+		869557042532834F00EB5DA0 /* OfferTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869557032532834F00EB5DA0 /* OfferTableViewCell.swift */; };
+		86955706253285C700EB5DA0 /* OffersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86955705253285C700EB5DA0 /* OffersService.swift */; };
+		86955709253287FA00EB5DA0 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86955708253287FA00EB5DA0 /* Section.swift */; };
+		8695570B2532883B00EB5DA0 /* Offers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8695570A2532883B00EB5DA0 /* Offers.swift */; };
+		8695570D2532887300EB5DA0 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8695570C2532887300EB5DA0 /* Item.swift */; };
+		8695571025328C5F00EB5DA0 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8695570F25328C5F00EB5DA0 /* NetworkLayer.swift */; };
+		8695571225328D7300EB5DA0 /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8695571125328D7300EB5DA0 /* ApiRouter.swift */; };
+		869557162532959E00EB5DA0 /* String+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869557152532959E00EB5DA0 /* String+UIColor.swift */; };
+		8695571B2532BEEF00EB5DA0 /* UIImageView+RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8695571A2532BEEF00EB5DA0 /* UIImageView+RemoteImage.swift */; };
+		8695571D2532C50A00EB5DA0 /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8695571C2532C50A00EB5DA0 /* UIConstants.swift */; };
+		8695572125336DB400EB5DA0 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8695572025336DB400EB5DA0 /* Price.swift */; };
+		869557232533756D00EB5DA0 /* OfferDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869557222533756D00EB5DA0 /* OfferDetailService.swift */; };
+		8695572625337BE400EB5DA0 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8695572525337BE400EB5DA0 /* HomeViewModel.swift */; };
+		8695572D253385DD00EB5DA0 /* HomeViewModelDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8695572C253385DD00EB5DA0 /* HomeViewModelDataProtocol.swift */; };
+		8695572F2534291600EB5DA0 /* UIView+Autolayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8695572E2534291600EB5DA0 /* UIView+Autolayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4D32FB4EFEFC53E587793711 /* Pods-LuckyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuckyApp.release.xcconfig"; path = "Target Support Files/Pods-LuckyApp/Pods-LuckyApp.release.xcconfig"; sourceTree = "<group>"; };
-		7E93B16DFA17B472D4BF10DC /* Pods_LuckyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LuckyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		86432AF1253278D40016F810 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		55A2ECCB3EC08A15D4DB4FBF /* Pods-LuckyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuckyApp.release.xcconfig"; path = "Target Support Files/Pods-LuckyApp/Pods-LuckyApp.release.xcconfig"; sourceTree = "<group>"; };
+		86432AF1253278D40016F810 /* OfferDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferDetailViewController.swift; sourceTree = "<group>"; };
 		8644CEA525326EE5007C4ADD /* LuckyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LuckyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8644CEA825326EE5007C4ADD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8644CEAA25326EE5007C4ADD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,8 +48,30 @@
 		8644CEB125326EE6007C4ADD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8644CEB425326EE6007C4ADD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8644CEB625326EE7007C4ADD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8674BD892534442D00E92E6A /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
+		8674BD8B253496C900E92E6A /* OffersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersViewModel.swift; sourceTree = "<group>"; };
+		8674BD8F2534B45500E92E6A /* Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
+		8674BD912534B4F400E92E6A /* DetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		8674BD932534C18900E92E6A /* Int+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+String.swift"; sourceTree = "<group>"; };
 		869556FF253280ED00EB5DA0 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		A9A5A9FEE09596C73CF8BE84 /* Pods-LuckyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuckyApp.debug.xcconfig"; path = "Target Support Files/Pods-LuckyApp/Pods-LuckyApp.debug.xcconfig"; sourceTree = "<group>"; };
+		86955701253282D100EB5DA0 /* OfferSectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferSectionTableViewCell.swift; sourceTree = "<group>"; };
+		869557032532834F00EB5DA0 /* OfferTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferTableViewCell.swift; sourceTree = "<group>"; };
+		86955705253285C700EB5DA0 /* OffersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersService.swift; sourceTree = "<group>"; };
+		86955708253287FA00EB5DA0 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		8695570A2532883B00EB5DA0 /* Offers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offers.swift; sourceTree = "<group>"; };
+		8695570C2532887300EB5DA0 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		8695570F25328C5F00EB5DA0 /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
+		8695571125328D7300EB5DA0 /* ApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
+		869557152532959E00EB5DA0 /* String+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+UIColor.swift"; sourceTree = "<group>"; };
+		8695571A2532BEEF00EB5DA0 /* UIImageView+RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+RemoteImage.swift"; sourceTree = "<group>"; };
+		8695571C2532C50A00EB5DA0 /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
+		8695572025336DB400EB5DA0 /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
+		869557222533756D00EB5DA0 /* OfferDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferDetailService.swift; sourceTree = "<group>"; };
+		8695572525337BE400EB5DA0 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		8695572C253385DD00EB5DA0 /* HomeViewModelDataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelDataProtocol.swift; sourceTree = "<group>"; };
+		8695572E2534291600EB5DA0 /* UIView+Autolayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Autolayout.swift"; sourceTree = "<group>"; };
+		87BE28630CB1F9EFE99D745B /* Pods_LuckyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LuckyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F15AB40AC0AE468584A480CA /* Pods-LuckyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuckyApp.debug.xcconfig"; path = "Target Support Files/Pods-LuckyApp/Pods-LuckyApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,28 +79,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90118908605EB117CB142765 /* Pods_LuckyApp.framework in Frameworks */,
+				4B5878F428874696BA47F200 /* Pods_LuckyApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0932010D867B321AEB69371A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				7E93B16DFA17B472D4BF10DC /* Pods_LuckyApp.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		8644CE9C25326EE5007C4ADD = {
 			isa = PBXGroup;
 			children = (
 				8644CEA725326EE5007C4ADD /* LuckyApp */,
 				8644CEA625326EE5007C4ADD /* Products */,
 				F2168B9C2479BB76437BC748 /* Pods */,
-				0932010D867B321AEB69371A /* Frameworks */,
+				B0F196C517FF4F2A9A90392A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,23 +107,124 @@
 		8644CEA725326EE5007C4ADD /* LuckyApp */ = {
 			isa = PBXGroup;
 			children = (
+				8695572425337BD700EB5DA0 /* ViewModel */,
+				869557192532BC1900EB5DA0 /* Extensions */,
+				869557172532A5D800EB5DA0 /* UI */,
+				8695570E25328C3900EB5DA0 /* Network */,
+				86955707253287E100EB5DA0 /* Model */,
 				8644CEA825326EE5007C4ADD /* AppDelegate.swift */,
 				8644CEAA25326EE5007C4ADD /* SceneDelegate.swift */,
-				869556FF253280ED00EB5DA0 /* HomeViewController.swift */,
 				8644CEAE25326EE5007C4ADD /* Main.storyboard */,
 				8644CEB125326EE6007C4ADD /* Assets.xcassets */,
 				8644CEB325326EE6007C4ADD /* LaunchScreen.storyboard */,
 				8644CEB625326EE7007C4ADD /* Info.plist */,
-				86432AF1253278D40016F810 /* TestViewController.swift */,
 			);
 			path = LuckyApp;
+			sourceTree = "<group>";
+		};
+		86955707253287E100EB5DA0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				86955708253287FA00EB5DA0 /* Section.swift */,
+				8695570A2532883B00EB5DA0 /* Offers.swift */,
+				8695570C2532887300EB5DA0 /* Item.swift */,
+				8674BD8F2534B45500E92E6A /* Detail.swift */,
+				8695572025336DB400EB5DA0 /* Price.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8695570E25328C3900EB5DA0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8695571425328E6600EB5DA0 /* Router */,
+				8695571325328E4E00EB5DA0 /* Service */,
+				8695570F25328C5F00EB5DA0 /* NetworkLayer.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		8695571325328E4E00EB5DA0 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				86955705253285C700EB5DA0 /* OffersService.swift */,
+				869557222533756D00EB5DA0 /* OfferDetailService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		8695571425328E6600EB5DA0 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				8695571125328D7300EB5DA0 /* ApiRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		869557172532A5D800EB5DA0 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				869557032532834F00EB5DA0 /* OfferTableViewCell.swift */,
+				86955701253282D100EB5DA0 /* OfferSectionTableViewCell.swift */,
+				869557182532A5DF00EB5DA0 /* Controllers */,
+				8695571C2532C50A00EB5DA0 /* UIConstants.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		869557182532A5DF00EB5DA0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				869556FF253280ED00EB5DA0 /* HomeViewController.swift */,
+				86432AF1253278D40016F810 /* OfferDetailViewController.swift */,
+				8674BD892534442D00E92E6A /* SpinnerViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		869557192532BC1900EB5DA0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				869557152532959E00EB5DA0 /* String+UIColor.swift */,
+				8695571A2532BEEF00EB5DA0 /* UIImageView+RemoteImage.swift */,
+				8695572E2534291600EB5DA0 /* UIView+Autolayout.swift */,
+				8674BD932534C18900E92E6A /* Int+String.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8695572425337BD700EB5DA0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				86955727253384CF00EB5DA0 /* Protocol */,
+				8695572525337BE400EB5DA0 /* HomeViewModel.swift */,
+				8674BD8B253496C900E92E6A /* OffersViewModel.swift */,
+				8674BD912534B4F400E92E6A /* DetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		86955727253384CF00EB5DA0 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				8695572C253385DD00EB5DA0 /* HomeViewModelDataProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		B0F196C517FF4F2A9A90392A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				87BE28630CB1F9EFE99D745B /* Pods_LuckyApp.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F2168B9C2479BB76437BC748 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A9A5A9FEE09596C73CF8BE84 /* Pods-LuckyApp.debug.xcconfig */,
-				4D32FB4EFEFC53E587793711 /* Pods-LuckyApp.release.xcconfig */,
+				F15AB40AC0AE468584A480CA /* Pods-LuckyApp.debug.xcconfig */,
+				55A2ECCB3EC08A15D4DB4FBF /* Pods-LuckyApp.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -101,7 +236,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8644CEB925326EE7007C4ADD /* Build configuration list for PBXNativeTarget "LuckyApp" */;
 			buildPhases = (
-				C9E095E48245DA7AC69A9D89 /* [CP] Check Pods Manifest.lock */,
+				E85A20E07F8AC9A9A5542566 /* [CP] Check Pods Manifest.lock */,
 				8644CEA125326EE5007C4ADD /* Sources */,
 				8644CEA225326EE5007C4ADD /* Frameworks */,
 				8644CEA325326EE5007C4ADD /* Resources */,
@@ -162,7 +297,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		C9E095E48245DA7AC69A9D89 /* [CP] Check Pods Manifest.lock */ = {
+		E85A20E07F8AC9A9A5542566 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -191,9 +326,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8674BD902534B45500E92E6A /* Detail.swift in Sources */,
+				8674BD8A2534442D00E92E6A /* SpinnerViewController.swift in Sources */,
+				8695572625337BE400EB5DA0 /* HomeViewModel.swift in Sources */,
+				8695572F2534291600EB5DA0 /* UIView+Autolayout.swift in Sources */,
+				8695570D2532887300EB5DA0 /* Item.swift in Sources */,
+				8674BD942534C18900E92E6A /* Int+String.swift in Sources */,
+				8674BD8C253496C900E92E6A /* OffersViewModel.swift in Sources */,
+				8695572D253385DD00EB5DA0 /* HomeViewModelDataProtocol.swift in Sources */,
+				8695571225328D7300EB5DA0 /* ApiRouter.swift in Sources */,
+				8695571D2532C50A00EB5DA0 /* UIConstants.swift in Sources */,
+				869557042532834F00EB5DA0 /* OfferTableViewCell.swift in Sources */,
+				8695572125336DB400EB5DA0 /* Price.swift in Sources */,
 				86955700253280ED00EB5DA0 /* HomeViewController.swift in Sources */,
+				8695571B2532BEEF00EB5DA0 /* UIImageView+RemoteImage.swift in Sources */,
+				86955706253285C700EB5DA0 /* OffersService.swift in Sources */,
+				8674BD922534B4F400E92E6A /* DetailViewModel.swift in Sources */,
 				8644CEA925326EE5007C4ADD /* AppDelegate.swift in Sources */,
-				86432AF2253278D40016F810 /* TestViewController.swift in Sources */,
+				8695571025328C5F00EB5DA0 /* NetworkLayer.swift in Sources */,
+				869557232533756D00EB5DA0 /* OfferDetailService.swift in Sources */,
+				86432AF2253278D40016F810 /* OfferDetailViewController.swift in Sources */,
+				86955709253287FA00EB5DA0 /* Section.swift in Sources */,
+				8695570B2532883B00EB5DA0 /* Offers.swift in Sources */,
+				86955702253282D100EB5DA0 /* OfferSectionTableViewCell.swift in Sources */,
+				869557162532959E00EB5DA0 /* String+UIColor.swift in Sources */,
 				8644CEAB25326EE5007C4ADD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,10 +492,11 @@
 		};
 		8644CEBA25326EE7007C4ADD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A9A5A9FEE09596C73CF8BE84 /* Pods-LuckyApp.debug.xcconfig */;
+			baseConfigurationReference = F15AB40AC0AE468584A480CA /* Pods-LuckyApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ATUBAYCUS7;
 				INFOPLIST_FILE = LuckyApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -354,10 +511,11 @@
 		};
 		8644CEBB25326EE7007C4ADD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D32FB4EFEFC53E587793711 /* Pods-LuckyApp.release.xcconfig */;
+			baseConfigurationReference = 55A2ECCB3EC08A15D4DB4FBF /* Pods-LuckyApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ATUBAYCUS7;
 				INFOPLIST_FILE = LuckyApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
