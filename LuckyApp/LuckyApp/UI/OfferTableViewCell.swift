@@ -39,7 +39,7 @@ final class OfferTableViewCell: UITableViewCell {
 // MARK: Setup cell
 extension OfferTableViewCell {
 //    func setupCell(data: OffersData) {
-    func setupCell(data: Item?) {
+    func setupCell(_ data: Item?) {
         offerImageView.setRemoteImage(imageUrl: data?.imageUrl ?? "")
         brandLabel.text = data?.brand.uppercased()
         titleLabel.text = data?.title

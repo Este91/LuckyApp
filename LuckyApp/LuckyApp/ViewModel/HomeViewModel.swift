@@ -48,6 +48,20 @@ extension HomeViewModel {
     }
 }
 
+// MARK: CellData
+extension HomeViewModel {
+    func dataForCellAt(indexPath: IndexPath) -> Item? {
+        if let offersDto = offers {
+            return OffersViewModel(offersDto).getItem(indexPath: indexPath)
+        }
+        return nil
+    }
+    
+    func dataForSectionCellAt(indexPath: IndexPath) -> String {
+        return offers?.sections[indexPath.section].title ?? ""
+    }
+}
+
 // MARK: Publics
 extension HomeViewModel {
     func getOffers() -> Offers? {

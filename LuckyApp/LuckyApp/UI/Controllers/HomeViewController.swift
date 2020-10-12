@@ -64,14 +64,14 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             if let sectionCell = tableView.dequeueReusableCell(withIdentifier: OfferSectionTableViewCell.cellIdentifier, for: indexPath) as? OfferSectionTableViewCell {
-                let sectionTitle = dataForSectionCellAt(indexPath: indexPath)
+                let sectionTitle = homeViewModel.dataForSectionCellAt(indexPath: indexPath)
                 sectionCell.setupCell(sectionTitle)
                 return sectionCell
                 }
         } else {
             if let rowCell = tableView.dequeueReusableCell(withIdentifier: OfferTableViewCell.cellIdentifier, for: indexPath) as? OfferTableViewCell {
-                let data = dataForCellAt(indexPath: indexPath)
-                rowCell.setupCell(data: data)
+                let data = homeViewModel.dataForCellAt(indexPath: indexPath)
+                rowCell.setupCell(data)
                 return rowCell
             }
         }
@@ -79,6 +79,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
         if indexPath.row > 0 {
             let detailUrl = homeViewModel.getDetailUrl(indexPath)
             homeViewModel.getOfferDetailData(detailUrl)
@@ -86,26 +87,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension HomeViewController {
-    func dataForCellAt(indexPath: IndexPath) -> Item? {
-        return homeViewModel.getOffers()?.sections[indexPath.section].items[indexPath.row - 1]
-    }
-    
-    func dataForSectionCellAt(indexPath: IndexPath) -> String {
-        return homeViewModel.getOffers()?.sections[indexPath.section].title ?? ""
-    }
-}
-
-struct OffersSectionData {
-    let sectionTitle: String
-}
-
 // MARK: HomeViewModelDataProtocol
 extension HomeViewController: HomeViewModelDataProtocol {
     func offersDataUpdated() {
         DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
-            self.tableView.reloadData()
+            self?.tableView.reloadData()
         }
     }
     
