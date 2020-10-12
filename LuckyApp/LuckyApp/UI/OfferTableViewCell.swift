@@ -64,7 +64,7 @@ private extension OfferTableViewCell {
     }
 
     func setupImageView() {
-        offerImageView.translatesAutoresizingMaskIntoConstraints = false
+        offerImageView.prepareForAutolayout(.clear)
         offerImageView.contentMode = .scaleAspectFit
         offerImageView.clipsToBounds = true
         offerImageView.backgroundColor = .lightGray
@@ -80,7 +80,7 @@ private extension OfferTableViewCell {
     }
 
     func setupBrandLabel() {
-        brandLabel.translatesAutoresizingMaskIntoConstraints = false
+        brandLabel.prepareForAutolayout(.clear)
         brandLabel.textAlignment = .left
         brandLabel.numberOfLines = 1
         brandLabel.font = UIFont.systemFont(ofSize: 10) // corregir font
@@ -93,7 +93,7 @@ private extension OfferTableViewCell {
     }
 
     func setupTitleLabel() {
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.prepareForAutolayout(.clear)
         titleLabel.textAlignment = .left
         titleLabel.numberOfLines = 0
         titleLabel.font = UIFont.boldSystemFont(ofSize: 16) // corregir font
@@ -110,7 +110,7 @@ private extension OfferTableViewCell {
     }
 
     func setupTagsLabel() {
-        tagsLabel.translatesAutoresizingMaskIntoConstraints = false
+        tagsLabel.prepareForAutolayout(.clear)
         tagsLabel.textAlignment = .left
         tagsLabel.numberOfLines = 1
         tagsLabel.font = UIFont.systemFont(ofSize: 10) // corregir font
@@ -125,8 +125,7 @@ private extension OfferTableViewCell {
     }
     
     func setupFavoritesView() {
-        favoritesView.translatesAutoresizingMaskIntoConstraints = false
-        favoritesView.backgroundColor = .clear
+        favoritesView.prepareForAutolayout(.clear)
         contentView.addSubview(favoritesView)
         NSLayoutConstraint.activate([
             favoritesView.topAnchor.constraint(equalTo: brandLabel.topAnchor),
@@ -135,7 +134,7 @@ private extension OfferTableViewCell {
         ])
         
         let heartImageView = UIImageView()
-        heartImageView.translatesAutoresizingMaskIntoConstraints = false
+        heartImageView.prepareForAutolayout(.clear)
         heartImageView.contentMode = .scaleAspectFit
         heartImageView.clipsToBounds = true
         heartImageView.image = UIImage(named: "Heart")
@@ -158,7 +157,7 @@ private extension OfferTableViewCell {
     }
 
     func setupFavouritesLabel() {
-        favouritesLabel.translatesAutoresizingMaskIntoConstraints = false
+        favouritesLabel.prepareForAutolayout(.clear)
         favouritesLabel.textAlignment = .left
         favouritesLabel.numberOfLines = 1
         favouritesLabel.font = UIFont.systemFont(ofSize: 10)

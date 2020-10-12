@@ -30,12 +30,11 @@ private extension HomeViewController {
     
     func setupNavBar() {
         navigationController?.navigationBar.barTintColor = "#F7F9FA".hexaToUIColor()
-        title = "Lucky Home"
+        title = "Home"
     }
     
     func setupTableView() {
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.backgroundColor = .white
+        tableView.prepareForAutolayout()
         tableView.separatorStyle = .none
         tableView.register(OfferSectionTableViewCell.self, forCellReuseIdentifier: OfferSectionTableViewCell.cellIdentifier)
         tableView.register(OfferTableViewCell.self, forCellReuseIdentifier: OfferTableViewCell.cellIdentifier)
@@ -118,7 +117,7 @@ extension HomeViewController: HomeViewModelDataProtocol {
     
     func offerDetailDataUpdated() {
         DispatchQueue.main.async { [weak self] in
-            self?.navigationController?.pushViewController(TestViewController(), animated: true)
+            self?.navigationController?.pushViewController(OfferDetailViewController(), animated: true)
         }
     }
 }
