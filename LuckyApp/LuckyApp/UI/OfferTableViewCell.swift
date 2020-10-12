@@ -79,7 +79,7 @@ private extension OfferTableViewCell {
     }
 
     func setupBrandLabel() {
-        setupLabel(label: brandLabel, textColor: "#718897".hexaToUIColor(), font: UIFont.systemFont(ofSize: 10), numberOfLines: 1)
+        setupLabel(label: brandLabel, textColor: "#718897".hexaToUIColor(), font: UIFont(name: "SFProText-Regular", size: 10), numberOfLines: 1)
         contentView.addSubview(brandLabel)
         NSLayoutConstraint.activate([
             brandLabel.topAnchor.constraint(equalTo: offerImageView.topAnchor),
@@ -88,7 +88,7 @@ private extension OfferTableViewCell {
     }
 
     func setupTitleLabel() {
-        setupLabel(label: titleLabel, textColor: "#222D34".hexaToUIColor(), font: UIFont.boldSystemFont(ofSize: 16))
+        setupLabel(label: titleLabel, textColor: "#222D34".hexaToUIColor(), font: UIFont(name: "SFProText-Bold", size: 16))
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineHeightMultiple = 1.34
         titleLabel.attributedText = NSMutableAttributedString(string: "Offer", attributes: [NSAttributedString.Key.kern: 0.25, NSAttributedString.Key.paragraphStyle: paragraphStyle])
@@ -101,7 +101,7 @@ private extension OfferTableViewCell {
     }
 
     func setupTagsLabel() {
-        setupLabel(label: tagsLabel, textColor: "#718897".hexaToUIColor(), font: UIFont.systemFont(ofSize: 10), numberOfLines: 1)
+        setupLabel(label: tagsLabel, textColor: "#718897".hexaToUIColor(), font: UIFont(name: "SFProText-Regular", size: 10), numberOfLines: 1)
         contentView.addSubview(tagsLabel)
         NSLayoutConstraint.activate([
             tagsLabel.leftAnchor.constraint(equalTo: offerImageView.rightAnchor, constant: UI.Margin.S_MARGIN),
@@ -134,7 +134,7 @@ private extension OfferTableViewCell {
             heartImageView.widthAnchor.constraint(equalToConstant: 10)
         ])
         
-        setupLabel(label: favouritesLabel, textColor: "#718897".hexaToUIColor(), font: UIFont.systemFont(ofSize: 10), numberOfLines: 1)
+        setupLabel(label: favouritesLabel, textColor: "#718897".hexaToUIColor(), font: UIFont(name: "SFProText-Regular", size: 10), numberOfLines: 1)
         favoritesView.addSubview(favouritesLabel)
         NSLayoutConstraint.activate([
             favouritesLabel.topAnchor.constraint(equalTo: favoritesView.topAnchor),
@@ -144,7 +144,7 @@ private extension OfferTableViewCell {
         ])
     }
     
-    func setupLabel(label: UILabel, textColor: UIColor, font: UIFont, textAlignment: NSTextAlignment = .left, numberOfLines: Int = 0) {
+    func setupLabel(label: UILabel, textColor: UIColor, font: UIFont?, textAlignment: NSTextAlignment = .left, numberOfLines: Int = 0) {
         label.prepareForAutolayout(.clear)
         label.textAlignment = textAlignment
         label.textColor = textColor

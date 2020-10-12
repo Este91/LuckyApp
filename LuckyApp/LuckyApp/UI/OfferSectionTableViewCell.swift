@@ -47,7 +47,7 @@ private extension OfferSectionTableViewCell {
     func setupLabel() {
         label.prepareForAutolayout(.clear)
         label.textAlignment = .left
-        label.font = UIFont.systemFont(ofSize: 24) // poner la font correcta
+        label.font = UIFont(name: "SFProText-Medium", size: 24)
         label.textColor = "#222D34".hexaToUIColor()
         contentView.addSubview(label)
         NSLayoutConstraint.activate([

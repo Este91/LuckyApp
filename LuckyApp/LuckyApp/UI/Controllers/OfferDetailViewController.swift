@@ -88,7 +88,7 @@ private extension OfferDetailViewController {
             imageView.heightAnchor.constraint(equalToConstant: 251)
         ])
         
-        let brandLabel = buildLabel(text: detailViewModel.brand.uppercased(), textColor: "#718897".hexaToUIColor(), font: UIFont.systemFont(ofSize: 12), numberOfLines: 1)
+        let brandLabel = buildLabel(text: detailViewModel.brand.uppercased(), textColor: "#718897".hexaToUIColor(), font: UIFont(name: "SFProText-Medium", size: 12), numberOfLines: 1)
         contentView.addSubview(brandLabel)
         NSLayoutConstraint.activate([
             brandLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 32),
@@ -117,7 +117,7 @@ private extension OfferDetailViewController {
             heartImageView.widthAnchor.constraint(equalToConstant: 10)
         ])
 
-        let favouritesLabel = buildLabel(text: detailViewModel.favoriteCount.intToFavoriteString(), textColor: "#718897".hexaToUIColor(), font: UIFont.systemFont(ofSize: 12), numberOfLines: 1)
+        let favouritesLabel = buildLabel(text: detailViewModel.favoriteCount.intToFavoriteString(), textColor: "#718897".hexaToUIColor(), font: UIFont(name: "SFProText-Medium", size: 12), numberOfLines: 1)
         favoritesView.addSubview(favouritesLabel)
         NSLayoutConstraint.activate([
             favouritesLabel.topAnchor.constraint(equalTo: favoritesView.topAnchor),
@@ -126,7 +126,7 @@ private extension OfferDetailViewController {
             favouritesLabel.bottomAnchor.constraint(equalTo: favoritesView.bottomAnchor),
         ])
         
-        let titleLabel = buildLabel(text: detailViewModel.title, textColor: "#222D34".hexaToUIColor(), font: UIFont.systemFont(ofSize: 32))
+        let titleLabel = buildLabel(text: detailViewModel.title, textColor: "#222D34".hexaToUIColor(), font: UIFont(name: "SFProText-Medium", size: 32))
         contentView.addSubview(titleLabel)
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: brandLabel.bottomAnchor, constant: 8),
@@ -134,7 +134,7 @@ private extension OfferDetailViewController {
             titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24)
         ])
         
-        let descriptionLabel = buildLabel(text: detailViewModel.description, textColor: "#222D34".hexaToUIColor(), font: UIFont.systemFont(ofSize: 16))
+        let descriptionLabel = buildLabel(text: detailViewModel.description, textColor: "#222D34".hexaToUIColor(), font: UIFont(name: "SFProText-Light", size: 16))
         contentView.addSubview(descriptionLabel)
         NSLayoutConstraint.activate([
             descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 24),
@@ -142,7 +142,7 @@ private extension OfferDetailViewController {
             descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24)
         ])
         
-        let priceLabel = buildLabel(text: "PRICE", textColor: "#222D34".hexaToUIColor(), font: UIFont.systemFont(ofSize: 10), numberOfLines: 1)
+        let priceLabel = buildLabel(text: "PRICE", textColor: "#222D34".hexaToUIColor(), font: UIFont(name: "SFProText-Regular", size: 10), numberOfLines: 1)
         contentView.addSubview(priceLabel)
         NSLayoutConstraint.activate([
             priceLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 32),
@@ -159,7 +159,7 @@ private extension OfferDetailViewController {
             oldPriceView.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: -24)
         ])
 
-        let oldPriceLabel = buildLabel(text: detailViewModel.price.old.uppercased(), textColor: "#9DB0BD".hexaToUIColor(), font: UIFont.systemFont(ofSize: 14), numberOfLines: 1)
+        let oldPriceLabel = buildLabel(text: detailViewModel.price.old.uppercased(), textColor: "#9DB0BD".hexaToUIColor(), font: UIFont(name: "SFProText-Regular", size: 14), numberOfLines: 1)
         oldPriceView.addSubview(oldPriceLabel)
         NSLayoutConstraint.activate([
             oldPriceLabel.topAnchor.constraint(equalTo: oldPriceView.topAnchor),
@@ -178,7 +178,7 @@ private extension OfferDetailViewController {
             lineView.heightAnchor.constraint(equalToConstant: 1)
         ])
         
-        let newPriceLabel = buildLabel(text: detailViewModel.price.new.uppercased(), textColor: "#222D34".hexaToUIColor(), font: UIFont.systemFont(ofSize: 18), numberOfLines: 1)
+        let newPriceLabel = buildLabel(text: detailViewModel.price.new.uppercased(), textColor: "#222D34".hexaToUIColor(), font: UIFont(name: "SFProText-Medium", size: 18), numberOfLines: 1)
         contentView.addSubview(newPriceLabel)
         NSLayoutConstraint.activate([
             newPriceLabel.centerYAnchor.constraint(equalTo: oldPriceView.centerYAnchor),
@@ -186,7 +186,7 @@ private extension OfferDetailViewController {
             newPriceLabel.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: -24)
         ])
         
-        let expirationLabel = buildLabel(text: detailViewModel.expiration, textColor: "#718897".hexaToUIColor(), font: UIFont.systemFont(ofSize: 10), numberOfLines: 1)
+        let expirationLabel = buildLabel(text: detailViewModel.expiration, textColor: "#718897".hexaToUIColor(), font: UIFont(name: "SFProText-Regular", size: 10), numberOfLines: 1)
         contentView.addSubview(expirationLabel)
         NSLayoutConstraint.activate([
             expirationLabel.centerYAnchor.constraint(equalTo: newPriceLabel.centerYAnchor),
@@ -194,7 +194,7 @@ private extension OfferDetailViewController {
             expirationLabel.leftAnchor.constraint(greaterThanOrEqualTo: newPriceLabel.rightAnchor, constant: 14)
         ])
         
-        let redemptionsCapLabel = buildLabel(text: "REDEMPTIONS CAP: " + detailViewModel.redemptionsCap.uppercased(), textColor: "#222D34".hexaToUIColor(), font: UIFont.systemFont(ofSize: 12), numberOfLines: 1)
+        let redemptionsCapLabel = buildLabel(text: "REDEMPTIONS CAP: " + detailViewModel.redemptionsCap.uppercased(), textColor: "#222D34".hexaToUIColor(), font: UIFont(name: "SFProText-Medium", size: 12), numberOfLines: 1)
         contentView.addSubview(redemptionsCapLabel)
         NSLayoutConstraint.activate([
             redemptionsCapLabel.topAnchor.constraint(equalTo: oldPriceLabel.bottomAnchor, constant: 32),
@@ -204,7 +204,7 @@ private extension OfferDetailViewController {
         ])
     }
     
-    func buildLabel(text: String?, textColor: UIColor, font: UIFont, textAlignment: NSTextAlignment = .left, numberOfLines: Int = 0) -> UILabel {
+    func buildLabel(text: String?, textColor: UIColor, font: UIFont?, textAlignment: NSTextAlignment = .left, numberOfLines: Int = 0) -> UILabel {
         let label = UILabel()
         label.prepareForAutolayout(.clear)
         label.text = text
