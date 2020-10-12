@@ -19,8 +19,13 @@ struct OffersViewModel {
     }
 }
 
+// MARK: Publics
 extension OffersViewModel {
     func getItem(indexPath: IndexPath) -> Item {
         return sections[indexPath.section].items[indexPath.row - 1]
+    }
+    
+    func getDetailUrl(_ indexPath: IndexPath) -> String {
+        return sections[indexPath.section].items[indexPath.row - 1].detailUrl
     }
 }

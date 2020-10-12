@@ -12,8 +12,8 @@ final class HomeViewModel: NSObject {
     
     private let offersService = OffersService()
     private let offerDetailService = OfferDetailService()
-    private var offers: Offers?
-    private var offerDetail: OfferDetail?
+    private var offersViewModel: OffersViewModel?
+    private var offerDetailViewModel: OfferDetailViewModel?
     weak var delegate: HomeViewModelDataProtocol?
 }
 
@@ -24,7 +24,7 @@ extension HomeViewModel {
             guard let self = self else { return }
             switch result {
             case .success(let offers):
-                self.offers = offers
+                self.offersViewModel = OffersViewModel(offers)
                 self.delegate?.offersDataUpdated()
             case .failure(let error):
                 print(error)
@@ -38,7 +38,7 @@ extension HomeViewModel {
             guard let self = self else { return }
             switch result {
             case .success(let offerDetail):
-                self.offerDetail = offerDetail
+                self.offerDetailViewModel = OfferDetailViewModel(offerDetail)
                 self.delegate?.offerDetailDataUpdated()
             case .failure(let error):
                 print(error)
@@ -51,24 +51,21 @@ extension HomeViewModel {
 // MARK: CellData
 extension HomeViewModel {
     func dataForCellAt(indexPath: IndexPath) -> Item? {
-        if let offersDto = offers {
-            return OffersViewModel(offersDto).getItem(indexPath: indexPath)
-        }
-        return nil
+        return offersViewModel?.getItem(indexPath: indexPath)
     }
     
     func dataForSectionCellAt(indexPath: IndexPath) -> String {
-        return offers?.sections[indexPath.section].title ?? ""
+        return offersViewModel?.sections[indexPath.section].title ?? ""
     }
 }
 
 // MARK: Publics
 extension HomeViewModel {
-    func getOffers() -> Offers? {
-        return offers
+    func getOffers() -> OffersViewModel? {
+        return offersViewModel
     }
     
     func getDetailUrl(_ indexPath: IndexPath) -> String {
-        return offers?.sections[indexPath.section].items[indexPath.row - 1].detailUrl ?? ""
+        return offersViewModel?.getDetailUrl(indexPath) ?? ""
     }
 }
