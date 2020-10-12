@@ -32,8 +32,8 @@ final class OfferSectionTableViewCell: UITableViewCell {
 
 // MARK: Setup cell
 extension OfferSectionTableViewCell {
-    func setupCell(data: OffersSectionData) {
-        label.text = data.sectionTitle
+    func setupCell(_ title: String) {
+        label.text = title
     }
 }
 

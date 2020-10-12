@@ -33,7 +33,7 @@ extension HomeViewModel {
         }
     }
     
-    func getOfferDetailData(offerDetailUrl: String, completion: ((Result<OfferDetail, Error>) -> ())? = nil) {
+    func getOfferDetailData(_ offerDetailUrl: String, completion: ((Result<OfferDetail, Error>) -> ())? = nil) {
         offerDetailService.getOfferDetail(offerDetailUrl) { [weak self] (result: Result<OfferDetail, Error>) in
             guard let self = self else { return }
             switch result {
@@ -48,9 +48,13 @@ extension HomeViewModel {
     }
 }
 
-// MARK: Getters
+// MARK: Publics
 extension HomeViewModel {
     func getOffers() -> Offers? {
         return offers
+    }
+    
+    func getDetailUrl(_ indexPath: IndexPath) -> String {
+        return offers?.sections[indexPath.section].items[indexPath.row - 1].detailUrl ?? ""
     }
 }
