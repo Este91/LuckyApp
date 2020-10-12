@@ -25,6 +25,7 @@ final class OfferDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        setupNavBar()
         renderScrollView()
     }
 }
@@ -33,6 +34,24 @@ final class OfferDetailViewController: UIViewController {
 private extension OfferDetailViewController {
     func setupView() {
         view.backgroundColor = .white
+    }
+    
+    func setupNavBar() {
+        let favoriteItem = UIBarButtonItem(image: UIImage(named: "WhiteHeart"), style: .plain, target: self, action: #selector(favoriteItemPressed))
+        favoriteItem.tintColor = "#222D34".hexaToUIColor()
+            
+        let shareItem = UIBarButtonItem(image: UIImage(named: "Share"), style: .plain, target: self, action: #selector(shareItemPressed))
+        shareItem.tintColor = "#222D34".hexaToUIColor()
+            
+        navigationItem.rightBarButtonItems = [favoriteItem, shareItem]
+    }
+    
+    @objc func shareItemPressed() {
+        print("Share item pressed")
+    }
+    
+    @objc func favoriteItemPressed() {
+        print("Favorite item pressed")
     }
     
     func renderScrollView() {
