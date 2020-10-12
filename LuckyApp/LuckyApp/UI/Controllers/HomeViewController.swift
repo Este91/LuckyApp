@@ -12,6 +12,7 @@ final class HomeViewController: UIViewController {
     
     private let homeViewModel = HomeViewModel()
     private let tableView = UITableView()
+    let loadingVC = LoadingViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,6 +91,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         if indexPath.row > 0 {
+            addLoadingView()
             let detailUrl = homeViewModel.getDetailUrl(indexPath)
             homeViewModel.getOfferDetailData(detailUrl)
         }
@@ -106,12 +108,29 @@ extension HomeViewController: HomeViewModelDataProtocol {
     
     func offerDetailDataUpdated() {
         DispatchQueue.main.async { [weak self] in
-            if let viewModel = self?.homeViewModel.getDetailViewModel() {
+            guard let self = self else { return }
+            if let viewModel = self.homeViewModel.getDetailViewModel() {
                 let offerDetailVC = OfferDetailViewController(detailViewModel: viewModel)
-                self?.navigationController?.pushViewController(offerDetailVC, animated: true)
+                self.navigationController?.pushViewController(offerDetailVC, animated: true)
+                self.removeLoadingView()
             }
-            
         }
+    }
+}
+
+// MARK: LoadingView
+private extension HomeViewController {
+    func addLoadingView() {
+        addChild(loadingVC)
+        loadingVC.view.frame = view.frame
+        view.addSubview(loadingVC.view)
+        loadingVC.didMove(toParent: self)
+    }
+    
+    func removeLoadingView() {
+        loadingVC.willMove(toParent: nil)
+        loadingVC.view.removeFromSuperview()
+        loadingVC.removeFromParent()
     }
 }
 
