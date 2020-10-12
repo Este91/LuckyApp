@@ -19,6 +19,7 @@ final class HomeViewController: UIViewController {
         homeViewModel.delegate = self
         homeViewModel.getOffersData()
         renderViews()
+        addLoadingView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -102,7 +103,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 extension HomeViewController: HomeViewModelDataProtocol {
     func offersDataUpdated() {
         DispatchQueue.main.async { [weak self] in
-            self?.tableView.reloadData()
+            guard let self = self else { return }
+            self.removeLoadingView()
+            self.tableView.reloadData()
         }
     }
     

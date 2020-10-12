@@ -55,7 +55,7 @@ extension HomeViewModel {
     }
     
     func dataForSectionCellAt(indexPath: IndexPath) -> String {
-        return offersViewModel?.sections[indexPath.section].title ?? ""
+        return offersViewModel?.getSectionTitle(indexPath.section) ?? ""
     }
 }
 

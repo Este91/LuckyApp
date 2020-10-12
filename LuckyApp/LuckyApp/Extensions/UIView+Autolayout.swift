@@ -2,7 +2,7 @@
 //  UIView+Autolayout.swift
 //  LuckyApp
 //
-//  Created by Camila Perez Tellado on 12/10/2020.
+//  Created by Esteban Boffa on 12/10/2020.
 //  Copyright © 2020 EstebanBoffa. All rights reserved.
 //
 

@@ -17,7 +17,7 @@ extension Int {
         if thousandUnits == "0" {
             return favoriteString + String(self)
         } else {
-            favoriteString = hundredUnits == "0" ? favoriteString + " " + thousandUnits : favoriteString + " " + thousandUnits + "," + hundredUnits
+            favoriteString = hundredUnits == "0" ? favoriteString + thousandUnits : favoriteString + thousandUnits + "," + hundredUnits
             return favoriteString + "K"
         }
     }

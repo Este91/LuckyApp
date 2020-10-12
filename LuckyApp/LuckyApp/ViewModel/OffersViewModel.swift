@@ -28,4 +28,8 @@ extension OffersViewModel {
     func getDetailUrl(_ indexPath: IndexPath) -> String {
         return sections[indexPath.section].items[indexPath.row - 1].detailUrl
     }
+    
+    func getSectionTitle(_ section: Int) -> String {
+        return sections[section].title
+    }
 }
