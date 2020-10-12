@@ -10,8 +10,8 @@ import UIKit
 
 final class HomeViewController: UIViewController {
     
-    let homeViewModel = HomeViewModel()
-    let tableView = UITableView()
+    private let homeViewModel = HomeViewModel()
+    private let tableView = UITableView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,12 +53,12 @@ private extension HomeViewController {
 // MARK: UITableViewDelegate & UITableViewDataSource
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let numberOfRowsInSection = homeViewModel.getOffers()?.sections[section].items.count
-        return numberOfRowsInSection != nil ? numberOfRowsInSection! + 1 : 0
+        let numberOfItemsInSection = homeViewModel.getNumberOfItemsInSection(section)
+        return numberOfItemsInSection != nil ? numberOfItemsInSection! + 1 : 0
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return homeViewModel.getOffers()?.sections.count ?? 0
+        return homeViewModel.getNumberOfSections()
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

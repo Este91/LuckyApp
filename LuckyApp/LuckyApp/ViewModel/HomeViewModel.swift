@@ -61,11 +61,15 @@ extension HomeViewModel {
 
 // MARK: Publics
 extension HomeViewModel {
-    func getOffers() -> OffersViewModel? {
-        return offersViewModel
-    }
-    
     func getDetailUrl(_ indexPath: IndexPath) -> String {
         return offersViewModel?.getDetailUrl(indexPath) ?? ""
+    }
+    
+    func getNumberOfItemsInSection(_ section: Int) -> Int? {
+        return offersViewModel?.sections[section].items.count
+    }
+    
+    func getNumberOfSections() -> Int {
+        offersViewModel?.sections.count ?? 0
     }
 }
