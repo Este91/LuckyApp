@@ -28,8 +28,8 @@ enum ApiRouter {
         switch self {
         case .getOffers:
             return "/luckytest/api/offers"
-        case .getOfferDetail(let offerDetailId):
-            return "/luckytest/api/offers/\(offerDetailId)"
+        case .getOfferDetail:
+            return ""
         }
     }
     

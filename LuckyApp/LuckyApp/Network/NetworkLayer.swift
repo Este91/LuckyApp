@@ -47,6 +47,7 @@ struct NetworkLayer {
                 } catch let error as NSError {
                     print(error)
                 }
+                print(message)
                 return
             }
             do {
@@ -59,7 +60,6 @@ struct NetworkLayer {
                 print(error.localizedDescription)
             }
         }
-
         dataTask.resume()
     }
     
